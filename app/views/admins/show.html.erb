@@ -1,9 +1,8 @@
-<table>
-    <% @users.each do |user| %>
-      <tr>
-        <td><%= user.email %>
-        <td><%= user.approved %>
-        <td><%= link_to "Edit", edit_user_path(user) %>
-      </tr>
-    <% end %>
-</table>
+<h1>User Info</h1>
+    <p>Name: <%= @user.name %></p>
+    <p>Email: <%= @user.email %></p>
+<% if @user.approved == false %>
+    <p>Status: Not approved</p>
+<% else %>
+    <p>Status: Approved</p>
+<% end %>
