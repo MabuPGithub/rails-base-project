@@ -11,9 +11,4 @@ class User < ApplicationRecord
   def inactive_message 
     approved? ? super : :not_approved
   end
-
-  # after_create :send_email_approval
-  # def send_email_approval
-  #   UserMailer.signup_confirmation(email).deliver
-  # end
 end
