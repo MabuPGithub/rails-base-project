@@ -27,6 +27,7 @@ class AdminsController < ApplicationController
     @user = User.find_by_id_and_approved!(params[:id], false)
     @user.approved = true
     @user.update(:id => @user.id)
+    AdminMailer.confirmation_approval(@user).deliver
     redirect_to admin_pending_show_url
   end
 
