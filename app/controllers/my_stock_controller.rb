@@ -29,7 +29,6 @@ class MyStockController < ApplicationController
     end
 
     private
-
     # def create_buy_trans_to_db
     #     items = post_buy_stocks_params
     #     puts items
