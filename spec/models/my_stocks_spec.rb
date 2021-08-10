@@ -2,22 +2,28 @@ require 'rails_helper'
 
 RSpec.describe MyStock, :type => :model do
     
-    subject { MyStock.new }
+    subject {MyStock.new(
+        stock_name_bought: "Test",
+        stock_count_bought: 1,
+        stock_price_bough: 100.00,
+        user_id: 1)}
 
     it "is valid with valid attributes" do
-        subject.stock_name_bought = "Test"
-        subject.stock_count_bought = 10
-        subject.stock_price_bough = 100.00
-        subject.user_id = 1
         expect(subject).to be_valid
     end
 
     it "is not valid without a stock_name_bought" do
-        my_stock = MyStock.new(stock_name_bought: nil)
-        expect(MyStock.new).to_not be_valid
+        subject.stock_name_bought = nil
+        expect(subject).to_not be_valid
     end
 
-    it "is not valid without a stock_price_bough"
+    it "is not valid without a stock_price_bough" do
+        subject.stock_price_bough = nil
+        expect(subject).to_not be_valid
+    end
 
-    it "is not valid without a stock_count_bought"
+    it "is not valid without a stock_count_bought" do
+        subject.stock_count_bought = nil
+        expect(subject).to_not be_valid
+    end
 end
