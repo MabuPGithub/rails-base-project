@@ -1,12 +1,14 @@
 class MyStock < ApplicationRecord
-    # before_save :price_x_100
     after_create :create_buy_transaction
     before_destroy :create_sell_transaction
-    # after_initialize do |user|
-    #     self.stock_price_bough = (self.stock_price_bough.to_f / 100)
-    # end
     
-    # after_find :price_x_100
+    validates_presence_of :stock_name_bought
+    validates_presence_of :stock_count_bought
+    validates_presence_of :stock_price_bough
+    validates_presence_of :user_id
+
+
+
     private
 
     def create_buy_transaction
@@ -17,10 +19,8 @@ class MyStock < ApplicationRecord
             user_id: rec.user_id)
         trans.save      
     end
-    # self.price = price *100 
+    
     def create_sell_transaction
-        # byebug
-        # puts "transaction : SOLD #{stock_name_bought}"
         client = IEX::Api::Client.new(
             publishable_token: 'pk_8602e5e277754e71b57e9e56bad4d6a8',
             secret_token: 'sk_bedf09f6562c479381c77a73f4788d6d',
@@ -36,12 +36,4 @@ class MyStock < ApplicationRecord
         trans.save
     end
 
-    # def price_x_100
-    #     byebug
-    #     self.stock_price_bough = (self.stock_price_bough * 100)
-    # end
-
-    # def add_current_user_id_to_my_stocks
-    #     self.user_id = current_user.id
-    # end
 end
