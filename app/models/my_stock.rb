@@ -7,7 +7,7 @@ class MyStock < ApplicationRecord
     validates_presence_of :stock_price_bough
     validates_presence_of :user_id
 
-    belongs_to :user
+    belongs_to :user, optional: true
 
 
 
