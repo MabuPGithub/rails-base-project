@@ -1,0 +1,27 @@
+<%= link_to "Pending Accounts", admin_pending_show_url %>
+
+<%= link_to "Create New User", admin_create_new_user_url %>
+
+<h1>Users</h1>
+<% @users.each do |user| %>
+<table style="width:100%">
+  <tr>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Status</th>
+    <th>Action</th>
+  </tr>
+  <tr>
+    <td><%= user.name %></td>
+    <td><%= user.email %></td>
+    <% if user.approved == false %>
+        <td>Pending</td>
+    <% else %>
+        <td>Approved</td>
+    <% end %>
+    <td>
+        <a href="<%= admin_path(user) %>">View User</a>
+    </td>
+  </tr>
+</table>
+<% end %>
