@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root to: 'stocks_view#index'
 
   devise_for :admins, :controllers => { registrations: 'admins/registrations', sessions: "admins/sessions"}
   devise_for :users, :controllers => { registrations: 'users/registrations', sessions: 'users/sessions' }
