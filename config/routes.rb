@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   post '/post/buy-stocks' => 'my_stock#buy_stocks', as: 'post_req_buy_stocks'
   get 'admins/pending_show' => 'admins#pending_show', as: 'admin_pending_show'
   post 'admins/pending_approve' => 'admins#pending_approve', as: 'admin_pending_approve'
-  get 'admins/create_new_user' => 'admins#create_new_user', as: 'admin_create_new_user'
+  post 'admins/create_new_user' => 'admins#create', as: 'admin_create_new_user'
   # get 'admins/all_transactions' => 'admins#all_transactions', as: 'admin_all_transactions'
   get "/users", to: "stocks_view#index", :as => :user_root
   get "/admins", to: "admins#index", :as => :admin_root
