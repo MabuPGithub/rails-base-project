@@ -33,7 +33,7 @@ class AdminsController < ApplicationController
 
   def create_new_user
     @user = User.new(user_params)
-
+    # @user.save
     if @user.save
       redirect_to admin_path
     else
@@ -43,6 +43,6 @@ class AdminsController < ApplicationController
 
   private
     def user_params
-      params.permit(:user).permit(:name, :email, :password, :admin, :approved)
+      params.permit(:user).permit(:name, :email, :password, :admin, :approved, :confirmed_at)
     end
 end

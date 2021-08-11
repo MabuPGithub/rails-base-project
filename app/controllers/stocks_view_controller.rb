@@ -11,8 +11,8 @@ class StocksViewController < ApplicationController
 
     def index
         client = IEX::Api::Client.new(
-            publishable_token: 'pk_8602e5e277754e71b57e9e56bad4d6a8',
-            secret_token: 'sk_bedf09f6562c479381c77a73f4788d6d',
+            publishable_token: Rails.application.credentials.iex[:publishable_token],
+            secret_token: Rails.application.credentials.iex[:secret_token],
             endpoint: 'https://cloud.iexapis.com/v1'
           )
         
