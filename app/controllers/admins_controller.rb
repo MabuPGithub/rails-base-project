@@ -17,6 +17,11 @@ class AdminsController < ApplicationController
   
   def update
     @user = User.find(params[:id])
+    if @user.update(user_params)
+      redirect_to "/admins"
+    else
+      render :edit
+    end
   end
 
   def pending_show
@@ -42,6 +47,6 @@ class AdminsController < ApplicationController
 
   private
     def user_params
-      params.permit(:user).permit(:name, :email, :password, :admin, :approved)
+      params.require(:user).permit(:name, :email, :password, :admin, :approved)
     end
 end

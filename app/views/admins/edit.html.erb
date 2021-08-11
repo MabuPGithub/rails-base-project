@@ -1,0 +1,17 @@
+<h1>Edit User Info</h1>
+
+<%= form_with scope: :user, :url => admin_edit_user_path(@user), method: :patch do |f| %>
+    <div class="field">
+      <%= f.label :name %><br />
+      <%= f.text_field :name %>
+    </div>
+    
+    <div class="field">
+      <%= f.label :email %><br />
+      <%= f.email_field :email %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit "Submit" %>
+    </div>
+<% end %>
