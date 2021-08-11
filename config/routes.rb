@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   delete '/get/mystocks/sell/:id' => 'my_stock#sell_stocks', as: 'delete_req_sell_stocks'
   get 'admins/pending_show' => 'admins#pending_show', as: 'admin_pending_show'
   post 'admins/pending_approve' => 'admins#pending_approve', as: 'admin_pending_approve'
+  patch 'admins/:id/edit_user' => 'admins#update', as: 'admin_edit_user'
   post 'admins/create_new_user' => 'admins#create', as: 'admin_create_new_user'
   # get 'admins/all_transactions' => 'admins#all_transactions', as: 'admin_all_transactions'
   get "/users", to: "stocks_view#index", :as => :user_root
