@@ -7,6 +7,17 @@ class AdminsController < ApplicationController
     @user = User.new
   end
 
+  def create
+    @user = current_admin.build_user(user_params)
+    
+    if @user.save
+      @user.confirm
+      redirect_to "/admins"
+    else
+      render :new
+    end
+  end
+
   def show
     @user = User.find(params[:id])
   end
@@ -31,18 +42,19 @@ class AdminsController < ApplicationController
     redirect_to admin_pending_show_url
   end
 
+
   def create_new_user
     @user = User.new(user_params)
     # @user.save
     if @user.save
-      redirect_to admin_path
+      redirect_to "/admins"
     else
       render :new
     end
   end
-
+  
   private
     def user_params
-      params.permit(:user).permit(:name, :email, :password, :admin, :approved, :confirmed_at)
+      params.require(:user).permit(:name, :email, :password, :admin, :approved, :confirmed_at)
     end
 end
