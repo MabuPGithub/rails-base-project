@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   post 'admins/pending_approve' => 'admins#pending_approve', as: 'admin_pending_approve'
   patch 'admins/:id/edit_user' => 'admins#update', as: 'admin_edit_user'
   post 'admins/create_new_user' => 'admins#create', as: 'admin_create_new_user'
-  # get 'admins/all_transactions' => 'admins#all_transactions', as: 'admin_all_transactions'
+  get 'admins/transaction_list' => 'admins#view_user_transactions', as: 'admin_transaction_list'
   get "/users", to: "stocks_view#index", :as => :user_root
   get "/admins", to: "admins#index", :as => :admin_root
 
