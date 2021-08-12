@@ -46,17 +46,6 @@ class AdminsController < ApplicationController
     AdminMailer.confirmation_approval(@user).deliver
     redirect_to admin_pending_show_url
   end
-
-
-  def create_new_user
-    @user = User.new(user_params)
-    # @user.save
-    if @user.save
-      redirect_to "/admins"
-    else
-      render :new
-    end
-  end
   
   private
     def user_params
