@@ -1,0 +1,40 @@
+.admins-index-container, .pending-users-container{
+    padding: 10px 15px;
+}
+
+.pending-accounts-container, .create-new-user-container{
+    text-align: center;
+    padding: 10px;
+    background-color: #111111;
+    color: #ffffff;
+    border-radius: 3px;
+    display: inline-block;
+}
+
+.pending-accounts-container a, .create-new-user-container a{
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.users-item-container p{
+    line-height: 26px;
+}
+
+.users-item-container{
+    padding: 15px;
+    background-color: #eeeeee;
+    border-radius: 4px;
+    border: 2px solid #bebebe;
+    margin-bottom: 5px;
+}
+
+.users-item-container:hover{
+    background-color: #ffffff;
+    box-shadow: 0px 3px 4px 0px rgba(187,187,187,0.71);
+    -webkit-box-shadow: 0px 3px 4px 0px rgba(187,187,187,0.71);
+    -moz-box-shadow: 0px 3px 4px 0px rgba(187,187,187,0.71);
+}
+
+#pending-h1, #admin-users-h1{
+    padding-bottom: 10px;
+}
