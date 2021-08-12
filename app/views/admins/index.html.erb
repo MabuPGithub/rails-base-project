@@ -1,9 +1,13 @@
+
 <div class="admins-index-container">
   <div class="pending-accounts-container">
     <%= link_to "Pending Accounts", admin_pending_show_url %>
   </div>
   <div class="create-new-user-container">
     <%= link_to "Create New User", new_admin_path %>
+  </div>
+  <div class="view-transactions-container">
+    <%= link_to "View User Transactions", admin_transaction_list_path %>
   </div>
   <br>
   <h1 id="admin-users-h1">Users</h1>

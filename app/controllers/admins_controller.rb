@@ -1,6 +1,8 @@
 class AdminsController < ApplicationController
+
+  before_action :authenticate_admin!
   def index
-      @users = User.all
+      @users = User.all.order(id: :desc)
   end
 
   def new
@@ -45,6 +47,10 @@ class AdminsController < ApplicationController
     @user.update(:id => @user.id)
     AdminMailer.confirmation_approval(@user).deliver
     redirect_to admin_pending_show_url
+  end
+
+  def view_user_transactions
+    @all_transactions = TransactionTable.all
   end
   
   private
