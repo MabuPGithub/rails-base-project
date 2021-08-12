@@ -3,10 +3,10 @@
     <h3>Latest</h3>
     <% @all_transactions.each do |item| %>
     <div class="my-trans-item-container">
+        <p>From: <%= item.user.email %></p>
         <h4 id="transaction-type-h4"><%= item.transction_type.upcase %></h4>
         <p><%= item.transaction_text %></p>
         <span><%= time_ago_in_words(item.created_at) %> ago</span>
-        <p><%= item.user.email %></p>
     </div>
     <% end %>
 </div>
