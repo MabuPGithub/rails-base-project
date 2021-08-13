@@ -1,4 +1,7 @@
 <h1>Edit User Info</h1>
+  <div class="back-container">
+    <%= link_to "◄ Back", admin_path(@user) %>
+  </div>
 
 <%= form_with scope: :user, :url => admin_edit_user_path(@user), method: :patch do |f| %>
     <div class="field">

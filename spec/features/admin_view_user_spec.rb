@@ -12,6 +12,6 @@ RSpec.feature "Admin view user", type: :feature do
         
         visit admin_path(user.id)
 
-        expect(current_path).to eql('/admins/1')
+        expect(current_path).to eql("/admins/#{user.id}")
     end
 end
