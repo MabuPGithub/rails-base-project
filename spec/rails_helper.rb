@@ -18,9 +18,12 @@ rescue ActiveRecord::PendingMigrationError => e
 end
 
 RSpec.configure do |config|
+  config.include Devise::Test::IntegrationHelpers
+  config.include Devise::Test::IntegrationHelpers, type: :request
   config.use_transactional_fixtures = false
   config.infer_spec_type_from_file_location!
   config.filter_rails_from_backtrace!
+
 
   config.include FactoryBot::Syntax::Methods
 

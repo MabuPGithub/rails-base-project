@@ -18,7 +18,7 @@ class StocksViewController < ApplicationController
         
         @quote = client.quote('MSFT')
 
-        stocks_list = ['MSFT']
+        stocks_list = ['MSFT', 'TSLA','FB', 'PYPL', 'NVDA', 'MDLZ', 'ZM', 'CTSH', 'WDAY' , 'AAPL']
         # , 'FB', 'PYPL', 'NVDA', 'MDLZ', 'ZM', 'CTSH', 'WDAY' , 'AAPL'
         # , 'TSLA'
         # add more stocks here if needed
