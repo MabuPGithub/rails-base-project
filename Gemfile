@@ -19,6 +19,7 @@ gem 'iex-ruby-client'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'capybara', '~> 2.7', '>= 2.7.1'
 end
 
 group :development do
