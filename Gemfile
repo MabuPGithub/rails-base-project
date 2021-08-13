@@ -30,6 +30,7 @@ group :development do
 end
 
 group :test do
+  gem 'capybara', '~> 2.7', '>= 2.7.1'
   gem 'rspec-rails'
   gem 'database_rewinder'
   gem 'factory_bot_rails'
